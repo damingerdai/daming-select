@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="select-content" (click)="toggle($event)">
+    <span class="placeHolder" *ngIf="!value;else valueHolder">
+      {{placeHolder}}
+    </span>
+    <ng-template #valueHolder>
+      {{value}}
+    </ng-template>
+  </div>
+  <div class="option-content" [hidden]="!open">
+    <ng-content></ng-content>
+  </div>
+</div>

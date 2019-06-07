@@ -1,0 +1,45 @@
+@mixin boxShadow {
+	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .1), 0 2px 4px 0 rgba(0, 0, 0, .1) !important; // sass-lint:disable-line no-color-literals no-important
+}
+
+$borderColor: #d9d9d9;
+$optionsPosX: -7px;
+$optionsPosY: 16px;
+
+.container {
+  border: {
+    color: $borderColor;
+    style: solid;
+    width: 1px;
+    radius: 3px;
+  }
+  display: inline-block;
+  font-family: Roboto;
+  text-align: left;
+  height: 40px;
+  width: 100%;
+  position: relative;
+
+  .select-content {
+    margin: 2px 7px;
+    font-size: 24px;
+    line-height: 38px;
+    width: 90%;
+
+    .placeHolder {
+      font-size: 24px;
+      color: #999;
+      font-weight: 100;
+    }
+  }
+
+  .option-content {
+    @include boxShadow;
+
+    background-color: #fff;
+		position: absolute;
+		transition: opacity .2s;
+		width: 100%;
+    z-index: 1;
+  }
+}
