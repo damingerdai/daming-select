@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, QueryList, ContentChildren, AfterContentInit } from '@angular/core';
 
-import { startWith, takeUntil, switchMap } from 'rxjs/operators';
+import { startWith, switchMap } from 'rxjs/operators';
 import { Subject, merge } from 'rxjs';
 
 import { OptionComponent, DamingOptionSelectionChange } from './option/option.component';
