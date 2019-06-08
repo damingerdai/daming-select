@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, QueryList, ContentChildren, AfterContentInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, QueryList, ContentChildren, AfterContentInit, OnDestroy, EventEmitter, Output } from '@angular/core';
 
 import { startWith, switchMap, filter } from 'rxjs/operators';
 import { Subject, merge, Subscription, fromEvent } from 'rxjs';
@@ -25,12 +25,15 @@ export class SelectComponent implements OnInit, OnDestroy, AfterContentInit {
   @ContentChildren(OptionComponent, { descendants: true })
   public options: QueryList<OptionComponent>;
 
+  @Output()
+  public valueChange: EventEmitter<DamingOptionSelectionChange> = new EventEmitter<DamingOptionSelectionChange>();
+
   @Input()
   public placeHolder: string;
 
   @Input()
   public set value(_value: string) {
-    if (_value) {
+    if (_value && _value !== this._value) {
       this._value = _value;
     }
   }
@@ -69,6 +72,7 @@ export class SelectComponent implements OnInit, OnDestroy, AfterContentInit {
     ).subscribe((option: DamingOptionSelectionChange) => {
       this.value = option.value;
       this.open = false;
+      this.valueChange.next(option);
     });
   }
 
