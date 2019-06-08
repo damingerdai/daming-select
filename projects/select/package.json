@@ -1,6 +1,15 @@
 {
   "name": "select",
   "version": "0.0.1",
+  "author": "Arthur Ming",
+  "description": "A single select control like Material Design",
+  "keywords" :["Angular","Single Select", "Material Design"],
+  "license" : "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/damingerdai/daming-select"
+  },
+  "homepage": "https://github.com/damingerdai/daming-select",
   "peerDependencies": {
     "@angular/cdk": ">=7.0.0",
     "@angular/common":  ">=7.0.0",
