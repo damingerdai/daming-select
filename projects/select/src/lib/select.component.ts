@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, QueryList, ContentChildren, AfterContentInit } from '@angular/core';
+import { Component, OnInit, Input, QueryList, ContentChildren, AfterContentInit, OnDestroy } from '@angular/core';
 
-import { startWith, switchMap } from 'rxjs/operators';
-import { Subject, merge } from 'rxjs';
+import { startWith, switchMap, filter } from 'rxjs/operators';
+import { Subject, merge, Subscription, fromEvent } from 'rxjs';
 
 import { OptionComponent, DamingOptionSelectionChange } from './option/option.component';
 
@@ -10,15 +10,17 @@ import { OptionComponent, DamingOptionSelectionChange } from './option/option.co
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss']
 })
-export class SelectComponent implements OnInit, AfterContentInit {
+export class SelectComponent implements OnInit, OnDestroy, AfterContentInit {
 
-   // tslint:disable-next-line: variable-name
+  // tslint:disable-next-line: variable-name
   private readonly _destroy = new Subject<void>();
 
   // tslint:disable-next-line: variable-name
   private _open = false;
-   // tslint:disable-next-line: variable-name
+  // tslint:disable-next-line: variable-name
   private _value: string;
+  // tslint:disable-next-line: variable-name
+  private _subscriptions: Subscription[] = [];
 
   @ContentChildren(OptionComponent, { descendants: true })
   public options: QueryList<OptionComponent>;
@@ -49,6 +51,14 @@ export class SelectComponent implements OnInit, AfterContentInit {
   }
 
   ngOnInit() {
+    const subscription = fromEvent(document, 'click').pipe(
+      filter(() => this.open === true),
+    ).subscribe(res => this.open = false);
+    this._subscriptions.push(subscription);
+  }
+
+  ngOnDestroy(): void {
+    this._subscriptions.forEach(subscription => subscription.unsubscribe);
   }
 
   ngAfterContentInit() {
