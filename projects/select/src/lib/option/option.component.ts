@@ -29,7 +29,6 @@ export class OptionComponent implements OnInit {
 
   select(event): void {
     event.stopPropagation();
-    console.log('点击事件');
     const otpion = new DamingOptionSelectionChange(this, this.value);
     this.onSelectionChange.next(otpion);
   }
