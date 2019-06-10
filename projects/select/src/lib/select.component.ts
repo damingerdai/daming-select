@@ -26,7 +26,7 @@ export class SelectComponent implements OnInit, OnDestroy, AfterContentInit {
   public options: QueryList<OptionComponent>;
 
   @Output()
-  public valueChange: EventEmitter<DamingOptionSelectionChange> = new EventEmitter<DamingOptionSelectionChange>();
+  public valueChange = new EventEmitter<string>();
 
   @Input()
   public placeHolder: string;
@@ -72,7 +72,7 @@ export class SelectComponent implements OnInit, OnDestroy, AfterContentInit {
     ).subscribe((option: DamingOptionSelectionChange) => {
       this.value = option.value;
       this.open = false;
-      this.valueChange.next(option);
+      this.valueChange.next(this.value);
     });
   }
 
