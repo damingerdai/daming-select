@@ -1,16 +1,43 @@
-import { Component, OnInit, Input, QueryList, ContentChildren, AfterContentInit, OnDestroy, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  QueryList,
+  ContentChildren,
+  AfterContentInit,
+  OnDestroy, EventEmitter,
+  Output,
+  forwardRef,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef
+} from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
 
 import { startWith, switchMap, filter } from 'rxjs/operators';
 import { Subject, merge, Subscription, fromEvent } from 'rxjs';
 
 import { OptionComponent, DamingOptionSelectionChange } from './option/option.component';
 
+
 @Component({
   selector: 'daming-select',
   templateUrl: './select.component.html',
-  styleUrls: ['./select.component.scss']
+  styleUrls: ['./select.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => SelectComponent),
+      multi: true,
+    },
+    // {
+    //   provide: NG_VALIDATORS,
+    //   useExisting: forwardRef(() => SelectComponent),
+    //   multi: true,
+    // }
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SelectComponent implements OnInit, OnDestroy, AfterContentInit {
+export class SelectComponent implements OnInit, OnDestroy, AfterContentInit, ControlValueAccessor {
 
   // tslint:disable-next-line: variable-name
   private readonly _destroy = new Subject<void>();
@@ -26,15 +53,16 @@ export class SelectComponent implements OnInit, OnDestroy, AfterContentInit {
   public options: QueryList<OptionComponent>;
 
   @Output()
-  public valueChange: EventEmitter<DamingOptionSelectionChange> = new EventEmitter<DamingOptionSelectionChange>();
+  public valueChange = new EventEmitter<string>();
 
   @Input()
   public placeHolder: string;
 
   @Input()
-  public set value(_value: string) {
-    if (_value && _value !== this._value) {
-      this._value = _value;
+  public set value(newValue: string) {
+    if (newValue && newValue !== this._value) {
+      this._value = newValue;
+      this._changeDetectorRef.markForCheck();
     }
   }
 
@@ -50,7 +78,14 @@ export class SelectComponent implements OnInit, OnDestroy, AfterContentInit {
     return this._open;
   }
 
-  constructor() {
+  // tslint:disable-next-line: variable-name
+  private _onChange: (value: any) => void = () => {};
+  // tslint:disable-next-line: variable-name
+  private _onTouched = () => {};
+
+  constructor(
+    private _changeDetectorRef: ChangeDetectorRef
+  ) {
   }
 
   ngOnInit() {
@@ -72,8 +107,24 @@ export class SelectComponent implements OnInit, OnDestroy, AfterContentInit {
     ).subscribe((option: DamingOptionSelectionChange) => {
       this.value = option.value;
       this.open = false;
-      this.valueChange.next(option);
+      this._onChange(this.value);
+      this.valueChange.emit(this.value);
     });
+  }
+
+  writeValue(value: string): void {
+    this.value = value;
+  }
+  registerOnChange(fn: (value: any) => void): void {
+    this._onChange = fn;
+  }
+
+  registerOnTouched(fn: () => void): void {
+    this._onTouched = fn;
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+
   }
 
   toggle(event) {

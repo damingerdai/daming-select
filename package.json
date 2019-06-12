@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open --port 8080 && ng build select --watch",
+    "start": "ng serve --open --port 8080",
     "build": "ng build",
+    "build_lib:watch": "ng build select --watch",
     "build_lib": "ng build select",
     "copy-license": "node tools/copy-license.js",
     "copy-readme": "node tools/copy-readme.js",
