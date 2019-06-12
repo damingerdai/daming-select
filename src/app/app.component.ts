@@ -23,6 +23,7 @@ export class AppComponent {
   options = OPTIONS;
 
   form: FormGroup;
+  damingForm: FormGroup;
 
   selectedValue: string;
 
@@ -40,9 +41,13 @@ export class AppComponent {
     this.form = fb.group({
       defaultValue: ['', [Validators.required]]
     });
+    this.damingForm = fb.group({
+      selectValue: []
+    });
   }
 
   submit() {
-    this.selectedValue = this.defaultValue.value;
+    // this.selectedValue = this.defaultValue.value;
+    this.damingForm.get('selectValue').setValue(this.defaultValue.value);
   }
 }
