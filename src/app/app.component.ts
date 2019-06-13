@@ -49,5 +49,9 @@ export class AppComponent {
   submit() {
     // this.selectedValue = this.defaultValue.value;
     this.damingForm.get('selectValue').setValue(this.defaultValue.value);
+    this.options.push({
+      value: this.defaultValue.value,
+      name: this.defaultValue.value
+    });
   }
 }
