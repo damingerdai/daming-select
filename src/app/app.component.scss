@@ -1,21 +1,21 @@
 div {
-  margin: {
-    bottom: 50px;
-    left: auto;
-    right: auto;
-  }
-  width: 625px;
+	margin: {
+		bottom: 50px;
+		left: auto;
+		right: auto;
+	}
+	width: 625px;
 }
 
 .form {
-  margin: {
-    top: 50px;
-    left: auto;
-    right: auto;
-  }
-  width: 625px;
+	margin: {
+		left: auto;
+		right: auto;
+		top: 50px;
+	}
+	width: 625px;
 
-  mat-form-field {
-    width: 100%;
-  }
+	mat-form-field {
+		width: 100%;
+	}
 }

@@ -1,12 +1,16 @@
-.option {
-  height: 3rem;
-  line-height: 3rem;
-  padding: 0 1rem;
+@import './../../scss/color';
 
-  &:hover {
-    background: {
-      color: #F2F2F2;
-    }
-    cursor: pointer;
-  }
+.option {
+	height: 3rem;
+	line: {
+		height: 3rem;
+	}
+	padding: 0 1rem;
+
+	&:hover {
+		background: {
+			color: $hoverColor;
+		}
+		cursor: pointer;
+	}
 }
