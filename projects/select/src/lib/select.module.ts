@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatRippleModule } from '@angular/material/core';
-import { SelectComponent } from './select.component';
+
 import { OptionComponent } from './option/option.component';
+import { SelectComponent } from './select.component';
 
 
 @NgModule({

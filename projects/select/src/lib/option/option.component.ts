@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 export class DamingOptionSelectionChange {
   constructor(
@@ -21,6 +21,7 @@ export class OptionComponent implements OnInit {
   public onSelectionChange = new EventEmitter<DamingOptionSelectionChange>();
 
   constructor(
+    // tslint:disable-next-line: variable-name
     private _changeDetectorRef: ChangeDetectorRef
   ) { }
 
