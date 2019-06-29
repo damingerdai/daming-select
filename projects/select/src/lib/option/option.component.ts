@@ -21,6 +21,7 @@ export class OptionComponent implements OnInit {
   public onSelectionChange = new EventEmitter<DamingOptionSelectionChange>();
 
   constructor(
+    // tslint:disable-next-line: variable-name
     private _changeDetectorRef: ChangeDetectorRef
   ) { }
 

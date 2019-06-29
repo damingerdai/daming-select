@@ -70,6 +70,7 @@ export class SelectComponent implements OnInit, OnDestroy, AfterContentInit, Con
     return this._value;
   }
 
+  // tslint:disable-next-line: variable-name
   public set open(_open: boolean) {
     this._open = _open;
   }
@@ -84,6 +85,7 @@ export class SelectComponent implements OnInit, OnDestroy, AfterContentInit, Con
   private _onTouched = () => {};
 
   constructor(
+    // tslint:disable-next-line: variable-name
     private _changeDetectorRef: ChangeDetectorRef
   ) {
   }
