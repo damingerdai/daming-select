@@ -1,23 +1,22 @@
 import {
-  Component,
-  OnInit,
-  Input,
-  QueryList,
-  ContentChildren,
-  AfterContentInit,
-  OnDestroy, EventEmitter,
-  Output,
   forwardRef,
+  AfterContentInit,
   ChangeDetectionStrategy,
-  ChangeDetectorRef
+  ChangeDetectorRef,
+  Component,
+  ContentChildren,
+  EventEmitter, Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  QueryList
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { startWith, switchMap, filter } from 'rxjs/operators';
-import { Subject, merge, Subscription, fromEvent } from 'rxjs';
+import { fromEvent, merge, Subject, Subscription } from 'rxjs';
+import { filter, startWith, switchMap } from 'rxjs/operators';
 
-import { OptionComponent, DamingOptionSelectionChange } from './option/option.component';
-
+import { DamingOptionSelectionChange, OptionComponent } from './option/option.component';
 
 @Component({
   selector: 'daming-select',
