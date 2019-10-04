@@ -1,12 +1,14 @@
 {
   "name": "daming-select",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open --port 8080",
     "build": "ng build",
     "build_lib:watch": "ng build select --watch",
     "build_lib": "ng build select",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog:all": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0",
     "copy-license": "node tools/copy-license.js",
     "copy-readme": "node tools/copy-readme.js",
     "copy-files": "npm run copy-license && npm run copy-readme",
@@ -17,7 +19,8 @@
     "e2e": "ng e2e",
     "push": "ng build --prod --base-href ./ && npx angular-cli-ghpages --dir=dist/daming-select",
     "preinstall": "node tools/check-yarn.js",
-    "sass": "sass-lint -v -q"
+    "sass": "sass-lint -v -q",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "private": true,
   "dependencies": {
@@ -51,6 +54,7 @@
     "angular-cli-ghpages": "^0.5.3",
     "chalk": "^2.4.2",
     "codelyzer": "^5.0.1",
+    "conventional-changelog-cli": "^2.0.23",
     "husky": "^2.4.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
