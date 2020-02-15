@@ -9,16 +9,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-		- name: use Node.js 12.x
-			uses: actions/setup-node@v1
-			with:
-				node-version: 12.x
-		- name: Install
-			run: |
-				npm install -g yarn
-				yarn
+    - name: use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Install
+      run: |
+        npm install -g yarn
+        yarn
     - name: Build and Deploy
-			run: |
-				npm run push
+      run: |
+        npm run push
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
