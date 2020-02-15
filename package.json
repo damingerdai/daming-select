@@ -17,7 +17,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "push": "ng build --prod --base-href ./ && npx angular-cli-ghpages --dir=dist/daming-select",
+    "push": "ng build select && ng build daming-select --prod --base-href ./ && npx angular-cli-ghpages --dir=dist/daming-select",
     "preinstall": "node tools/check-yarn.js",
     "sass": "sass-lint -v -q",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
