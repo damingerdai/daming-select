@@ -1,5 +1,7 @@
 # Daming Select
 
+![.github/workflows/deploy.yml](https://github.com/damingerdai/daming-select/workflows/.github/workflows/deploy.yml/badge.svg?branch=master&event=push)
+
 基于Angular的类Material Designs的下拉框，
 
 > 本项目使用[Angular CLI](https://github.com/angular/angular-cli) 7.3.6版本创建。
