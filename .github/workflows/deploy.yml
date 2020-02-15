@@ -8,17 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
-    - name: use Node.js 12.x
-      uses: actions/setup-node@v1
+      uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
       with:
-        node-version: 12.x
-    - name: Install
-      run: |
-        npm install -g yarn
-        yarn
+        persist-credentials: false
+
     - name: Build and Deploy
-      run: |
-        npm run push
-      env:
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: dist/daming-select # The folder the action should deploy.
+        BUILD_SCRIPT: npx ng build select && npx ng build daming-select --prod --base-href ./
