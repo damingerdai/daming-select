@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open --port 8080",
-    "build": "ng build",
+    "build": "ng build select && ng build daming-select --prod --base-href ./",
     "build_lib:watch": "ng build select --watch",
     "build_lib": "ng build select",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
