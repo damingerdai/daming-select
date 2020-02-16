@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/daming-select",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -55,6 +56,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -148,6 +153,11 @@
           "options": {
             "tsConfig": "projects/select/tsconfig.lib.json",
             "project": "projects/select/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/select/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -173,5 +183,8 @@
       }
     }
   },
-  "defaultProject": "daming-select"
+  "defaultProject": "daming-select",
+  "cli": {
+    "analytics": "b46ce50d-11db-41b0-9b88-506ce87a7f83"
+  }
 }
