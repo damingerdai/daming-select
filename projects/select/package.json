@@ -1,6 +1,6 @@
 {
-  "name": "select",
-  "version": "0.0.1",
+  "name": "@damingerdai/select",
+  "version": "0.0.2",
   "author": "Arthur Ming",
   "description": "A single select control like Material Design",
   "keywords" :["Angular","Single Select", "Material Design"],
