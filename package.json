@@ -20,8 +20,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "push": "ng build select && ng build daming-select --prod --base-href ./ && npx angular-cli-ghpages --dir=dist/daming-select",
-    "postinstall": "ngcc",
-    "preinstall": "node tools/check-yarn.js",
+		"preinstall": "node tools/check-yarn.js",
+		"publish": "npm run npm_pack && cd dist/@damingerdai/select && npm publish --registry https://artifacts.pwc.com/artifactory/api/npm/pwc-nv-npm-virt --scope=@damingerdai",
     "sass": "sass-lint -v -q",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
