@@ -6,7 +6,7 @@
     "start": "ng serve --open --port 8080",
     "build": "ng build select && ng build daming-select --prod --base-href ./",
     "build_lib:watch": "ng build select --watch",
-    "build_lib": "ng build select",
+    "build_lib": "ng build select --prod",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "changelog:all": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0",
     "copy-license": "node tools/copy-license.js",
@@ -18,7 +18,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "push": "ng build select && ng build daming-select --prod --base-href ./ && npx angular-cli-ghpages --dir=dist/daming-select",
+		"push": "ng build select && ng build daming-select --prod --base-href ./ && npx angular-cli-ghpages --dir=dist/daming-select",
+		"postinstall": "ngcc",
     "preinstall": "node tools/check-yarn.js",
     "sass": "sass-lint -v -q",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
