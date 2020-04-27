@@ -1,6 +1,6 @@
 {
   "name": "daming-select",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open --port 8080",
@@ -10,16 +10,16 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "changelog:all": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0",
     "copy-license": "node tools/copy-license.js",
-		"copy-readme": "node tools/copy-readme.js",
-		"copy-changelog": "node tools/copy-changelog.js",
+    "copy-readme": "node tools/copy-readme.js",
+    "copy-changelog": "node tools/copy-changelog.js",
     "copy-files": "npm run copy-license && npm run copy-readme && npm run copy-changelog",
     "npm_pack": "cd dist/select && npm pack",
     "package": "npm run build_lib && npm run copy-files && npm run npm_pack",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-		"push": "ng build select && ng build daming-select --prod --base-href ./ && npx angular-cli-ghpages --dir=dist/daming-select",
-		"postinstall": "ngcc",
+    "push": "ng build select && ng build daming-select --prod --base-href ./ && npx angular-cli-ghpages --dir=dist/daming-select",
+    "postinstall": "ngcc",
     "preinstall": "node tools/check-yarn.js",
     "sass": "sass-lint -v -q",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
