@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectModule } from 'select';
 
 import { AppComponent } from './app.component';
+import { SharedMaterialModule } from './shared.material.module';
 
 @NgModule({
   declarations: [
@@ -20,10 +21,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     SelectModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDividerModule,
-    MatButtonModule,
+    SharedMaterialModule,
     ReactiveFormsModule
   ],
   providers: [],
