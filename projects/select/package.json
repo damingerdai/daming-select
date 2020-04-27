@@ -1,5 +1,5 @@
 {
-  "name": "select",
+  "name": "@damingerdai/select",
   "version": "0.0.1",
   "author": "Arthur Ming",
   "description": "A single select control like Material Design",
