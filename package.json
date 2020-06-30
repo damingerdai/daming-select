@@ -13,6 +13,7 @@
     "copy-readme": "node tools/copy-readme.js",
     "copy-files": "npm run copy-license && npm run copy-readme",
     "npm_pack": "cd dist/select && npm pack",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "package": "npm run build_lib && npm run copy-files && npm run npm_pack",
     "test": "ng test",
     "lint": "ng lint",
