@@ -20,11 +20,11 @@
       "dom"
     ],
     "paths": {
-      "select": [
-        "dist/select"
+      "@damingerdai": [
+        "dist/@damingerdai"
       ],
-      "select/*": [
-        "dist/select/*"
+      "@damingerdai/*": [
+        "dist/@damingerdai/*"
       ]
     }
   }
