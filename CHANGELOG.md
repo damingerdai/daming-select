@@ -1,3 +1,12 @@
+## [0.0.3](https://github.com/damingerdai/daming-select/compare/v0.0.1...v0.0.3) (2020-09-29)
+
+
+### Bug Fixes
+
+* add support new library path ([d1ae794](https://github.com/damingerdai/daming-select/commit/d1ae794))
+
+
+
 ## [0.0.2](https://github.com/damingerdai/daming-select/compare/v0.0.1...v0.0.2) (2020-04-27)
 
 

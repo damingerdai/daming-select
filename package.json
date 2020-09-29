@@ -1,6 +1,6 @@
 {
   "name": "daming-select",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open --port 8080",
@@ -13,19 +13,19 @@
     "copy-readme": "node tools/copy-readme.js",
     "copy-changelog": "node tools/copy-changelog.js",
     "copy-files": "npm run copy-license && npm run copy-readme && npm run copy-changelog",
-		"npm_pack": "cd dist/@damingerdai/select && npm pack",
-		"postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "npm_pack": "cd dist/@damingerdai/select && npm pack",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "package": "npm run build_lib && npm run copy-files && npm run npm_pack",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "push": "ng build select && ng build daming-select --prod --base-href ./ && npx angular-cli-ghpages --dir=dist/daming-select",
-		"preinstall": "node tools/check-yarn.js",
-		"publish": "npm run package && cd dist/@damingerdai/select && npm publish --registry https://artifacts.pwc.com/artifactory/api/npm/pwc-nv-npm-virt --scope=@damingerdai",
+    "preinstall": "node tools/check-yarn.js",
+    "publish": "npm run package && cd dist/@damingerdai/select && npm publish --registry https://artifacts.pwc.com/artifactory/api/npm/pwc-nv-npm-virt --scope=@damingerdai",
     "sass": "sass-lint -v -q",
-		"version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
-		"version:patch": "yarn version --patch",
-		"version:minor": "yarn version --minor"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "version:patch": "yarn version --patch",
+    "version:minor": "yarn version --minor"
   },
   "private": true,
   "dependencies": {
@@ -74,14 +74,14 @@
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
     "typescript": "^3.9.5"
-	},
-	"resolutions": {
-		"**/**/acorn": ">=6.4.1 <7.0.0",
-		"**/**/handlebars": ">=3.0.8 <4.0.0 || >=4.5.3",
-		"**/**/kind-of": ">=6.0.3",
-		"**/**/qs": " >=6.0.4 <6.1.0 || >=6.1.2 <6.2.0 || >=6.2.3 <6.3.0 || >=6.3.2",
-		"**/**/minimist": ">=0.2.1 <1.0.0 || >=1.2.3",
-		"**/**/yargs-parser": ">=13.1.2 <14.0.0 || >=15.0.1 <16.0.0 || >=18.1.2",
-		"**/**/http-proxy": ">=1.18.1"
-	}
+  },
+  "resolutions": {
+    "**/**/acorn": ">=6.4.1 <7.0.0",
+    "**/**/handlebars": ">=3.0.8 <4.0.0 || >=4.5.3",
+    "**/**/kind-of": ">=6.0.3",
+    "**/**/qs": " >=6.0.4 <6.1.0 || >=6.1.2 <6.2.0 || >=6.2.3 <6.3.0 || >=6.3.2",
+    "**/**/minimist": ">=0.2.1 <1.0.0 || >=1.2.3",
+    "**/**/yargs-parser": ">=13.1.2 <14.0.0 || >=15.0.1 <16.0.0 || >=18.1.2",
+    "**/**/http-proxy": ">=1.18.1"
+  }
 }
