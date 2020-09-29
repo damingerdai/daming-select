@@ -23,7 +23,9 @@
 		"preinstall": "node tools/check-yarn.js",
 		"publish": "npm run package && cd dist/@damingerdai/select && npm publish --registry https://artifacts.pwc.com/artifactory/api/npm/pwc-nv-npm-virt --scope=@damingerdai",
     "sass": "sass-lint -v -q",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+		"version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+		"version:patch": "yarn version --patch",
+		"version:minor": "yarn version --minor"
   },
   "private": true,
   "dependencies": {
