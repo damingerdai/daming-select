@@ -1,3 +1,7 @@
+## [0.0.4](https://github.com/damingerdai/daming-select/compare/v0.0.3...v0.0.4) (2020-11-20)
+
+
+
 ## [0.0.3](https://github.com/damingerdai/daming-select/compare/v0.0.1...v0.0.3) (2020-09-29)
 
 
