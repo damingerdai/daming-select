@@ -1,6 +1,0 @@
-{
-  "hooks": {
-    "pre-commit": "ng lint && sass-lint -v -q",
-    "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS --config ./tools/commitlint.config.js"
-  }
-}

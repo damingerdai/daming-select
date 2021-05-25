@@ -19,4 +19,4 @@ jobs:
           BASE_BRANCH: master
           BRANCH: gh-pages
           FOLDER: dist/daming-select # The folder the action should deploy.
-          BUILD_SCRIPT: npm install && npm uninstall husky && npm run build
+          BUILD_SCRIPT: npm install && npm run build
