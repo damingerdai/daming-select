@@ -38,14 +38,14 @@ import { DamingOptionSelectionChange, OptionComponent } from './option/option.co
 })
 export class SelectComponent implements OnInit, OnDestroy, AfterContentInit, ControlValueAccessor {
 
-  // tslint:disable-next-line: variable-name
+  // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   private readonly _destroy = new Subject<void>();
 
-  // tslint:disable-next-line: variable-name
+  // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   private _open = false;
-  // tslint:disable-next-line: variable-name
+  // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   private _value: string;
-  // tslint:disable-next-line: variable-name
+  // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   private _subscriptions: Subscription[] = [];
 
   @ContentChildren(OptionComponent, { descendants: true })
@@ -69,7 +69,7 @@ export class SelectComponent implements OnInit, OnDestroy, AfterContentInit, Con
     return this._value;
   }
 
-  // tslint:disable-next-line: variable-name
+  // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   public set open(_open: boolean) {
     this._open = _open;
   }
@@ -78,13 +78,13 @@ export class SelectComponent implements OnInit, OnDestroy, AfterContentInit, Con
     return this._open;
   }
 
-  // tslint:disable-next-line: variable-name
+  // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   private _onChange: (value: any) => void = () => {};
-  // tslint:disable-next-line: variable-name
+  // eslint-disable-next-line @typescript-eslint/naming-convention,no-underscore-dangle,id-blacklist,id-match
   private _onTouched = () => {};
 
   constructor(
-    // tslint:disable-next-line: variable-name
+    // eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle, id-blacklist, id-match
     private _changeDetectorRef: ChangeDetectorRef
   ) {
   }

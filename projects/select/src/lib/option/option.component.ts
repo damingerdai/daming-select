@@ -16,12 +16,12 @@ export class OptionComponent implements OnInit {
   @Input()
   public value: string;
 
-  // tslint:disable-next-line: no-output-on-prefix
   @Output()
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   public onSelectionChange = new EventEmitter<DamingOptionSelectionChange>();
 
   constructor(
-    // tslint:disable-next-line: variable-name
+    // eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle, id-blacklist, id-match
     private _changeDetectorRef: ChangeDetectorRef
   ) { }
 
